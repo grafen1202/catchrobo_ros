@@ -3,6 +3,15 @@ project(robot_arm_description)
 
 find_package(ament_cmake REQUIRED)
 
+install(PROGRAMS scripts/arm_joint_state_publisher.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(kinematics test/test_kinematics.py)
+endif()
+
 install(DIRECTORY
   launch
   urdf
