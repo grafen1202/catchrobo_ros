@@ -1,0 +1,6 @@
+# Target position (x, y, z) in millimetres followed by orientation in radians.
+# The solver uses target_pose[3] for yaw; indices 4 and 5 are reserved.
+float32[6] target_pose
+---
+# Joint angles (theta1, theta2, theta3, theta4) in radians.
+float32[4] joint_angles
